@@ -132,19 +132,23 @@ class MainActivity : AppCompatActivity() {
 
     // ---- Scan installed apps + their cache sizes ----
 
+    private val minCacheBytesToShow = 15L * 1024 * 1024 // 15 MB
+
     private fun loadApps() {
         summaryText.text = getString(R.string.scanning)
         lifecycleScope.launch {
             val scanned = withContext(Dispatchers.IO) { scanInstalledApps() }
+            val filtered = scanned.filter { it.cacheBytes > minCacheBytesToShow }
+
             appList.clear()
-            appList.addAll(scanned)
+            appList.addAll(filtered)
             adapter.updateList(appList)
 
-            val totalBytes = scanned.sumOf { it.cacheBytes }
-            summaryText.text = "${scanned.size} apps found • ${
+            val totalBytes = filtered.sumOf { it.cacheBytes }
+            summaryText.text = "${filtered.size} apps over 15 MB • ${
                 AppCacheInfo("", "", null, totalBytes).formattedSize()
-            } of cache total. Tap an app to clear its cache, or use guided mode below."
-            guidedButton.isEnabled = scanned.isNotEmpty()
+            } of cache total (${scanned.size - filtered.size} smaller apps hidden). Tap an app to clear its cache, or use guided mode below."
+            guidedButton.isEnabled = filtered.isNotEmpty()
         }
     }
 
