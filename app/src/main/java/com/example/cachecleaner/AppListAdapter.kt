@@ -43,8 +43,10 @@ class AppListAdapter(
     }
 
     fun updateList(newItems: List<AppCacheInfo>) {
-        items.clear()
-        items.addAll(newItems)
+        if (items !== newItems) {
+            items.clear()
+            items.addAll(newItems)
+        }
         notifyDataSetChanged()
     }
 }
