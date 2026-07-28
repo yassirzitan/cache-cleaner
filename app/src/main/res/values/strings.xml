@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Cache Cleaner</string>
+    <string name="scanning">Scanning installed apps…</string>
+    <string name="start_guided_clean">Start Guided Clean (Tap → Clear Cache → Back)</string>
+    <string name="grant_usage_access">Grant "Usage access" permission</string>
+    <string name="usage_access_explanation">To show real cache sizes per app, this app needs the special "Usage access" permission. Find "Cache Cleaner" in the next screen and enable it.</string>
+    <string name="accessibility_service_description">Lets Cache Cleaner automatically tap "Clear cache" on the Settings screen it opens for you, and go back, during Guided Clean. It only acts while a Guided Clean run is in progress, and only looks for the cache button — never "Clear storage" or "Clear data".</string>
+    <string name="enable_auto_click">Enable Auto-Click (Accessibility)</string>
+    <string name="auto_click_enabled">Auto-Click is ON — Guided Clean will tap "Clear cache" and go back by itself.</string>
+    <string name="auto_click_disabled">Auto-Click is off — you'll need to tap "Clear cache" and Back yourself each screen.</string>
+</resources>
