@@ -7,5 +7,5 @@
     <string name="accessibility_service_description">Lets Cache Cleaner automatically tap "Clear cache" on the Settings screen it opens for you, and go back, during Guided Clean. It only acts while a Guided Clean run is in progress, and only looks for the cache button — never "Clear storage" or "Clear data".</string>
     <string name="enable_auto_click">Enable Auto-Click (Accessibility)</string>
     <string name="auto_click_enabled">Auto-Click is ON — Guided Clean will tap "Clear cache" and go back by itself.</string>
-    <string name="auto_click_disabled">Auto-Click is off — you'll need to tap "Clear cache" and Back yourself each screen.</string>
+    <string name="auto_click_disabled">Auto-Click is off — you\'ll need to tap \"Clear cache\" and Back yourself each screen.</string>
 </resources>
